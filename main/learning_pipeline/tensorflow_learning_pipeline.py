@@ -1,23 +1,7 @@
-from abc import ABC, abstractmethod
+from learning_pipeline import LearningPipeline
 from tensorflow.keras import applications, optimizers
 
-
-class LearningPipeline(ABC):
-
-    @abstractmethod
-    def train(self, train_data, val_data=None):
-        pass
-
-    @abstractmethod
-    def test(self, test_data):
-        pass
-
-    @abstractmethod
-    def predict(self, data):
-        pass
-
-
-class TensorFlowLearningPipeline(LearningPipeline):
+class ImageClassificationLearningPipeline(LearningPipeline):
     available_optimizers = {
         "sgd": optimizers.SGD,
         "rmsprop": optimizers.RMSprop,

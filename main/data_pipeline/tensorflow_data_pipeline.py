@@ -1,27 +1,8 @@
-from abc import ABC, abstractmethod
 import pandas as pd
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from data_pipeline import DataPipeline
 
-
-class DataPipeline(ABC):
-
-    @property
-    @abstractmethod
-    def train_data(self):
-        pass
-
-    @property
-    @abstractmethod
-    def val_data(self):
-        pass
-
-    @property
-    @abstractmethod
-    def test_data(self):
-        pass
-
-
-class TensorFlowDataPipeline(DataPipeline):
+class ImageClassificationDataPipeline(DataPipeline):
 
     def __init__(self, params):
         self.path  = params.pop("data_root")
