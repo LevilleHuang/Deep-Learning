@@ -1,7 +1,8 @@
-from learning_pipeline import LearningPipeline
 from tensorflow.keras import applications, optimizers
+from . import learning_pipeline
 
-class ImageClassificationLearningPipeline(LearningPipeline):
+
+class ImageClassificationLearningPipeline(learning_pipeline.LearningPipeline):
     available_optimizers = {
         "sgd": optimizers.SGD,
         "rmsprop": optimizers.RMSprop,
