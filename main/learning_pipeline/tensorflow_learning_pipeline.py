@@ -1,8 +1,10 @@
+import sys
+sys.path.append("main/learning_pipeline")
+
 from tensorflow.keras import applications, optimizers
-from . import learning_pipeline
+from learning_pipeline import LearningPipeline
 
-
-class ImageClassificationLearningPipeline(learning_pipeline.LearningPipeline):
+class ImageClassificationLearningPipeline(LearningPipeline):
     available_optimizers = {
         "sgd": optimizers.SGD,
         "rmsprop": optimizers.RMSprop,

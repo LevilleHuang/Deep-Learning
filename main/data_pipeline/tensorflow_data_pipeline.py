@@ -1,9 +1,11 @@
+import sys
+sys.path.append("main/data_pipeline")
+
 import pandas as pd
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from . import data_pipeline
+from data_pipeline import DataPipeline
 
-
-class ImageClassificationDataPipeline(data_pipeline.DataPipeline):
+class ImageClassificationDataPipeline(DataPipeline):
 
     def __init__(self, params):
         self.path  = params.pop("data_root")
